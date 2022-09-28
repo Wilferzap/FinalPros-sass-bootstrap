@@ -1,0 +1,202 @@
+@use "-components.scss";
+
+@mixin section-display {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    padding: 3rem;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+    align-items: center;
+    ul{
+        padding-bottom: auto;
+        align-items: center;
+        
+    }
+}
+.logo img{
+    max-width: 6rem;
+}
+.sec-home{
+    display: flex;
+    align-items: center;
+    @include section-display();
+    .home-cta{
+        flex: 1;
+        .cta-text{
+            color: -components.$color-main;
+        }
+    }
+    .home-title{
+        max-width: 20rem;
+        font-size: 3rem;
+    }
+    .home-description{
+        max-width: 400px;
+    }
+    
+}
+.sec-features{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include section-display();
+    .intro{
+        text-align: center;
+        h3{
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 0.8rem;
+            color: #888;
+        }
+    }
+    .features{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .text{
+            padding: 2rem 0;
+            flex: 1;
+            .feature{
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                
+                .description{
+                    margin-left: 1rem;
+                    .description-title{
+                        font-size: 1.15rem;
+                    }
+                    .description-text{
+                        font-size: 1rem;
+                        color: #888;
+                    }
+                }
+            }
+        }
+        img{
+            max-width: 20rem;
+        }
+    }
+}
+.sec-benefits{
+    border-top: solid 1px #ddd;
+    .intro{
+        @extend .sec-features;
+        text-align: center;
+        h3{
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 0.8rem;
+            color: #888;
+        }
+    }
+    .benefit-card{
+        width: 100%;
+        padding: 0 2rem 2rem 2rem;
+    }
+
+}
+.sec-kpis{
+    background-color: -components.$color-main;
+    color: white;
+    padding: 4rem;
+    .kpi{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .number{
+            font-size: 3rem;
+            font-weight: 600;
+        }
+        .desc{
+            font-size: 0.9rem;
+            color: #ffffffaa;
+        }
+    }
+}
+.sec-onboarding{
+    .intro{
+        @extend .sec-features;
+        
+        text-align: center;
+        h3{
+            font-size: 1.8rem;
+        }
+        p{
+            font-size: 0.8rem;
+            color: #888;
+        }
+    }
+    .steps{
+        padding: 0 8rem 5rem 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-items: center;
+        .step-separator{
+            flex: 1;
+            border-top: solid 2px #ddd;
+            margin: 0 1rem;
+        }
+    }
+}
+.sec-footer-cta{
+    padding: 5rem;
+    background-color: #f4f8fe;
+    background-image: url("../img/bg.png");
+    background-repeat: no-repeat;
+    background-position: 100%;
+    .cta{
+        width: 50%;
+    }.cta-title{
+        font-size: 2rem;
+    }
+    .cta-text{
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px){
+    .sec-onboarding{
+        .steps{
+            flex-direction: column;
+        }.icon-desc{
+            .title{
+                text-align: center;
+            }
+        }
+    }
+
+    .sec-footer-cta{
+        background-image: none;
+        .cta{
+            display: flex;
+            flex-direction: column;
+            justify-items: center;
+            width: 100%;
+            .cta-title{
+                text-align: center;
+            }
+            .cta-text{
+                text-align: center;
+            }
+            .btn-main{
+                margin: auto;
+            }
+        }
+    }
+
+}
